@@ -1,0 +1,14 @@
+.myDiv
+{
+    widows: 300px;
+    align-items: center;
+}
+
+.cs-dropdown{
+	font-size: 15px;
+	font-weight: 700;
+        max-width: 600px;
+        color: #cf763a;
+
+	
+} 

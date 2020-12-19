@@ -1,0 +1,87 @@
+<div id="fh5co-contact" class="fh5co-section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>Contact Information</h3>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+        <form [formGroup]="contactForm">
+            <div class="row animate-box">
+                <div class="col-md-6" *ngFor="let b of databranch">
+                    <h3 class="section-title">Our Address</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <ul class="contact-info">
+                        <li><i class="icon-location-pin"></i>{{b.branchid.address}}</li>
+                        <li><i class="icon-phone2"></i>{{b.property.mobile_number}}</li>
+                        <li><i class="icon-mail"></i><a href="#">{{b.property.email}}</a></li>
+                        <li><i class="icon-globe2"></i><a href="#">www.krtya.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Name"
+                                formControlName="fullname"
+                                [(ngModel)]="fullname">
+                                <div *ngIf="contactForm.controls['fullname'].invalid && (contactForm.controls['fullname'].touched || contactForm.controls['fullname'].dirty)" class="alert-msg">
+                                    <div *ngIf="contactForm.controls['fullname'].errors.required">
+                                       <h5> Name is Required</h5>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Email"
+                                formControlName="email"
+                                [(ngModel)]="email">
+                                <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].touched || contactForm.controls['email'].dirty)" class="alert-msg">
+                                    <div *ngIf="contactForm.controls['email'].errors.required">
+                                       <h5> Email is Required</h5>
+                                      </div>
+                                      <div *ngIf="contactForm.controls['email'].errors.email">
+                                       <h5> email is in valid email form</h5>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea 
+                                name="" 
+                                class="form-control" 
+                                id="" 
+                                cols="30" 
+                                rows="7" 
+                                placeholder="Message"
+                                formControlName="remark"
+                                [(ngModel)]="remark"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input 
+                                type="submit" 
+                                value="Send Message" 
+                                class="btn btn-primary"
+                                (click)="insert()"
+                                [disabled]="!contactForm.valid"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="map" class="fh5co-map"></div>
+<!-- END map -->

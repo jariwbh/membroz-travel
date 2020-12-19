@@ -1,0 +1,30 @@
+.myDiv
+{
+    widows: 300px;
+}
+
+.cs-dropdown{
+	font-size: 15px;
+	font-weight: 700;
+        max-width: 600px;
+        color: #cf763a;
+
+	
+} 
+/* .model-text{
+        font-size: 20px;
+}
+h6.b {
+        visibility: hidden;
+}
+h2 {
+        display: flex;
+        align-items: center;
+}
+       */
+/* .cs-dropdown{
+        color: #cf763a;
+        font-weight: 700;
+        font-size: 1.5em;
+	opacity: 1;
+       } */
