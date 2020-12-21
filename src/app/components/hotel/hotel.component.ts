@@ -118,12 +118,9 @@ hotelForm: FormGroup;
     //console.log(this.hotelData)
     //console.log(this.locationname)
     this.hotelData.forEach(element => {
-      console.log(element.locationname)
-      console.log(this.locationname)
      if( element.locationname == this.locationname)
      {      
       this.newdata = element._id
-      console.log(this.newdata)
 
      }
       
@@ -131,7 +128,6 @@ hotelForm: FormGroup;
   }
 
   searchHotel(_id:number){
-    console.log(_id);
     this._router.navigate(['/hotel',_id]);
 
 //this.GetHotelbyId(this.bindId)

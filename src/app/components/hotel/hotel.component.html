@@ -101,6 +101,11 @@
                                                 <option *ngFor="let c of hotelData">{{c.locationname}}
                                                 </option>
                                             </select>
+                                            <div *ngIf="hotelForm.controls['locationname'].invalid && (hotelForm.controls['locationname'].touched || hotelForm.controls['locationname'].dirty)" class="alert-msg">
+                                                <div *ngIf="hotelForm.controls['locationname'].errors.required">
+                                                   <h5> City is Required</h5>
+                                                  </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-xxs-12 col-xs-6 mt alternate">
@@ -164,7 +169,7 @@
                     </div>
                     <div class="desc2 animate-box">
                         <div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-                            <p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
+                            <!-- <p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p> -->
                             <h2>Exclusive Limited Time Offer</h2>
                             <h3>Fly to Hong Kong via Los Angeles, USA</h3>
                             <span class="price">$599</span>
@@ -191,9 +196,9 @@
                     <img [src]="resort.property.images[0].attachment ? resort.property.images[0].attachment : 'assets/images/extrahotel.jpg'" class="img-responsive" width="400" height="600">
                     <div class="desc">
                         <span></span>
-                        <h3>{{resort.resortname}}</h3>
-                        <span style="font-style: inherit;">{{resort.property.address}}</span>
-                        <span class="price">{{resort.property.price ? resort.property.price :'0.00'}}</span>
+                        <h3 style="font-size: x-large;">{{resort.resortname}}</h3>
+<!--                         <span style="font-style: inherit;">{{resort.property.address}}</span>
+ -->                        <span class="price">{{resort.property.price ? resort.property.price :'0.00'}}</span>
                         <a class="btn btn-primary btn-outline" (click)="confirmBooking(resort._id)" >Book Now <i class="icon-arrow-right22"></i></a>
                     </div>
                 </div>

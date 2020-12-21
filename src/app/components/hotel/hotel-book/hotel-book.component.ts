@@ -27,6 +27,11 @@ export class HotelBookComponent implements OnInit {
   placelist:any[]=[]; //sotore city
   placeid:any;
   datediff:any;
+  hotelData:any;
+  locationname:any;
+  newdata:any;
+  hotelForm:FormGroup;
+
 
 
   constructor(
@@ -64,6 +69,10 @@ export class HotelBookComponent implements OnInit {
       'totalchildrens':['']
      
       });
+      this.hotelForm=this.fb.group({
+        'locationname':['']
+      });
+      this.getHotel();
       //this.submit()
   }
 
@@ -76,6 +85,33 @@ export class HotelBookComponent implements OnInit {
      console.log(this.locationlist1)     
     }
   }) 
+  }
+
+  getHotel(){
+    this._commonservice.getHotelList().then(data => {
+      if(data){
+        this.hotelData = data;        
+        //console.log(this.hotelData)        
+      }
+    })
+  }
+
+  searchHotel(_id:number){
+    console.log(_id);
+    this._router.navigate(['/hotel',_id]);
+
+ }
+
+  selected(){
+    this.hotelData.forEach(element => {
+     if( element.locationname == this.locationname)
+     {      
+      this.newdata = element._id
+     // console.log(this.newdata)
+
+     }
+      
+    });
   }
 
   Getplacename() //resorts

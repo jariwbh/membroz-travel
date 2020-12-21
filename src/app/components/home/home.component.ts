@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
     $.getScript('assets/js/main.js');
     this.hotelForm = this.fb.group({                  
-      'locationname':[''],
+      'locationname':['',Validators.required],
      
       });
     this.Getlocationname();

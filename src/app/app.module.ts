@@ -14,7 +14,6 @@ import { HotelBookComponent } from './components/hotel/hotel-book/hotel-book.com
 import { DestinationComponent } from './components/destination/destination.component';
 import { FlightComponent } from './components/flight/flight.component';
 import { CarComponent } from './components/car/car.component';
-
 @NgModule({
   declarations: [
     AppComponent,
